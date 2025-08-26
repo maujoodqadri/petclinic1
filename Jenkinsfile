@@ -6,15 +6,6 @@ pipeline {
                 git branch: 'prod','https://github.com/maujoodqadri/petclinic1.git'
             }
         }
-        stage('Test') {
-            steps {
-                //
-            }
-        }
-        stage('Deploy') {
-            steps {
-                //
-            }
-        }
-    }
+    } 
 }
+
