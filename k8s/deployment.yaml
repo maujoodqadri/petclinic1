@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-deployment
+  labels:
+    app: petclinic
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: petclinic
+  template:
+    metadata:
+      labels:
+        app: petclinic
+    spec:
+      containers:
+      - name: petclinic
+        image: petclinicacrmaujood.azurecr.io/petclinic:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: acr-secret
